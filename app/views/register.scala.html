@@ -1,0 +1,20 @@
+@(farmerForm: Form[Farmer])
+
+@import helper._
+@main("WeFarm") {
+
+    <h1>New farmer registration</h1>
+
+    @form(routes.Application.index()
+    ) {
+        @inputText(farmerForm("username"), '_label -> "Name", '_showConstraints -> false)
+        @inputText(farmerForm("useremail"), '_label -> "Email", '_showConstraints -> false)
+        @inputPassword(farmerForm("password"), '_label -> "Password", '_showConstraints -> false)
+        @inputText(farmerForm("farm"), '_label -> "Farm", '_showConstraints -> false)
+        @inputText(farmerForm("produce"), '_label -> "Produce", '_showConstraints -> false)
+        @inputText(farmerForm("produce_price"), '_label -> "Produce Price", '_showConstraints -> false)
+        <input type="submit" class="btn btn-primary" value="Create Farmer">
+    }
+    <a href="@routes.Application.index()">Back</a>
+
+}
